@@ -1,0 +1,41 @@
+<body>
+  <div class= "container">
+    <div class = "col-md-8 col-md-offset-2">
+      <div class = "post_info">
+        <span><%= @newpost.created_at %></span>&nbsp;&nbsp;
+        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t),{:style=>"color:#3333cc !important;"} }.join(', ') %></strong>
+        </span>&nbsp;
+        <span>
+          Views: <strong><%= @newpost.count %></strong>
+        </span>
+      </div>
+      <div class = 'title'>
+        <%= @newpost.title %>
+      </div>
+      <p>
+        <%= @newpost.description.html_safe %>
+      </p>
+      <div class = "col-md-4">
+        <% if logged_in? %>
+          <% if current_user.admin? %>
+            <%= link_to 'Edit', edit_newpost_path(@newpost), class: "btn btn-warning" %> 
+          <% end %>
+        <% end %>
+      </div><br>
+      <!--FB comment -->
+      <div class='comment'>
+        BÌNH LUẬN
+      </div>
+      <div id="fb-root"><div class="fb-comments" data-href="<%= @newpost_path %>" data-width="730" data-num-posts="2"></div></div>
+    </div>
+  </div>
+  
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/all.js#xfbml=1&appId=504323752911178";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</body>
+
