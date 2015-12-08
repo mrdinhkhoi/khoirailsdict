@@ -1,6 +1,8 @@
 <body>
   <div class= "container">
-    <h1>LOGO trang  </h1>
+    <div class="col-md-6 col-md-offset-2">
+      <h1>LOGO trang  </h1>
+    </div>
     <%= form_tag(newposts_path, :method => "get", id: "search-form") do %>
       <div class="col-md-6 col-md-offset-3">
         <%= text_field_tag :search, params[:search],class: "form-control", 

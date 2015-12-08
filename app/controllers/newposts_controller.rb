@@ -6,8 +6,7 @@ class NewpostsController < ApplicationController
    if params[:search]
     @newposts = Newpost.search(params[:search]).paginate(page: params[:page], :per_page => 15)
     unless @newposts.present?
-      flash[:notice] = "No result please try another keyword!"
-      redirect_to newposts_url
+      redirect_to newposts_url, alert: 'No result please try another keyword!'
     end
    end
 
@@ -30,8 +29,7 @@ class NewpostsController < ApplicationController
         @newpost = Newpost.new
       end
     else
-      flash[:notice] = "Access Denied"
-      redirect_to root_path
+      redirect_to root_path, alert: 'Access Denied'
     end
   end
 
