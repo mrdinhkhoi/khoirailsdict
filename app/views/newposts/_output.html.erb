@@ -23,19 +23,19 @@
   <% @newposts.each do |newpost| %>
     <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
       <div class = "row">
-         <div class="col-md-6 col-md-offset-3">
+         <div class="col-md-8 col-md-offset-2">
           <dl>
             <dt>
               <h2>
                 <strong>
-                  <%= link_to newpost.title, newpost, {:style=>"color:#3333cc !important;"} %>
+                  <%= link_to newpost.title, newpost, {:style=>"color:#1a8bff !important;"} %>
                 </strong>
               </h2>
             </dt>
             <dd><%= truncate(strip_tags(newpost.description),
-                   :length => 100) %></dd>
+                   :length => 120) %></dd>
             <!--<dt> <span>tags</span> <%= newpost.keyword %></dt>-->
-            <dt>Tags: <%= raw newpost.tag_list.map { |t| link_to t, tag_path(t), {:style=>"color:#3333cc !important;"} }.join(', ') %></dt>
+            <dt>Tags: <%= raw newpost.tag_list.map { |t| link_to t, tag_path(t), {:style=>"color:#1a8bff !important;"} }.join(', ') %></dt>
             <dt> <span>Views</span> <%= newpost.count %></dt>
           </dl>
         </div>

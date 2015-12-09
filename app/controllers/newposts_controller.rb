@@ -6,7 +6,7 @@ class NewpostsController < ApplicationController
    if params[:search]
     @newposts = Newpost.search(params[:search]).paginate(page: params[:page], :per_page => 15)
     unless @newposts.present?
-      redirect_to newposts_url, alert: 'No result please try another keyword!'
+      redirect_to nill_url
     end
    end
 

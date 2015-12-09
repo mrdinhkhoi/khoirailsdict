@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get 'nill' => 'sessions#nillresult'
   get    'home'   => 'static_pages#search'
   get    'newp' => 'newposts#new'
   get 'tags/:tag', to: 'newposts#index', as: :tag

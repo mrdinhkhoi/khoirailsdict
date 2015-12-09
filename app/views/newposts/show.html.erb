@@ -1,9 +1,9 @@
 <body>
   <div class= "container">
-    <div class = "col-md-8 col-md-offset-2">
+    <div class = "col-md-10 col-md-offset-1">
       <div class = "post_info">
         <span><%= @newpost.created_at %></span>&nbsp;&nbsp;
-        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t),{:style=>"color:#3333cc !important;"} }.join(', ') %></strong>
+        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t),{:style=>"color:#1a8bff !important;"} }.join(', ') %></strong>
         </span>&nbsp;
         <span>
           Views: <strong><%= @newpost.count %></strong>
@@ -12,9 +12,9 @@
       <div class = 'title'>
         <%= @newpost.title %>
       </div>
-      <p>
-        <%= @newpost.description.html_safe %>
-      </p>
+      <div class="description">
+        <p><%= @newpost.description.html_safe %><p>
+      </div>
       <div class = "col-md-4">
         <% if logged_in? %>
           <% if current_user.admin? %>
