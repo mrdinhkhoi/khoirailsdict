@@ -3,24 +3,24 @@
     <div class = "col-md-10 col-md-offset-1">
       <div class = "post_info">
         <span><%= @newpost.created_at %></span>&nbsp;&nbsp;
-        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t),{:style=>"color:#1a8bff !important;"} }.join(', ') %></strong>
+        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t),{:style=>"color:#DD4814 !important;"} }.join(', ') %></strong>
         </span>&nbsp;
         <span>
           Views: <strong><%= @newpost.count %></strong>
+        </span>
+        <span class = "">
+          <% if logged_in? %>
+            <% if current_user.admin? %>
+              <%= link_to raw( "<span class = 'glyphicon glyphicon-edit'> Edit</span>") , edit_newpost_path(@newpost), class: "btn btn-link" %> 
+            <% end %>
+          <% end %>
         </span>
       </div>
       <div class = 'title'>
         <%= @newpost.title %>
       </div>
       <div class="description">
-        <p><%= @newpost.description.html_safe %><p>
-      </div>
-      <div class = "col-md-4">
-        <% if logged_in? %>
-          <% if current_user.admin? %>
-            <%= link_to 'Edit', edit_newpost_path(@newpost), class: "btn btn-warning" %> 
-          <% end %>
-        <% end %>
+        <%=raw @newpost.description%>
       </div><br>
       <!--FB comment -->
       <div class='comment'>

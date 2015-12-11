@@ -3,15 +3,15 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get 'static_pages/search'
-  get 'signup'  => 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
-  get 'nill' => 'sessions#nillresult'
-  get    'home'   => 'static_pages#search'
-  get    'newp' => 'newposts#new'
-  get 'tags/:tag', to: 'newposts#index', as: :tag
+  get     'static_pages/search'
+  get     'signup'  => 'users#new'
+  get     'login'   => 'sessions#new'
+  post    'login'   => 'sessions#create'
+  delete  'logout'  => 'sessions#destroy'
+  get     'nill' => 'sessions#nillresult'
+  get     'home'   => 'static_pages#search'
+  get     'newp' => 'newposts#new'
+  get     'tags/:tag', to: 'newposts#index', as: :tag
   resources :users
   resources :newposts
   # The priority is based upon order of creation: first created -> highest priority.

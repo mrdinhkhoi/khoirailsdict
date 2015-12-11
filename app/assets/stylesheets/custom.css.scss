@@ -19,6 +19,10 @@ $gray-medium-light: #eaeaea;
   }
 }
 
+.dropdown-menu {
+  background-color: #DD4814;
+}
+
 body {
  background: linear-gradient(#e6e6e6,#cccccc);
  background-repeat: repeat-x;
@@ -52,10 +56,13 @@ body {
 }
 
 .col-md-10.col-md-offset-1 {
-
-  
+  font-size: 1.3em;
+  min-height: 650px;
 }
 
+.tags {
+  padding-top: 30%;
+}
 
 
 
@@ -100,6 +107,10 @@ dt {
   font-family: Ubuntu, sans-serif; 
 }
 
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }
 
 
 /* forms */
@@ -140,6 +151,7 @@ dt {
 /* footer */
 
 footer {
+  padding-top: 1em;
   padding-left: 5em;
   padding-right: 5em;
   border-top: 1px solid $gray-medium-light;

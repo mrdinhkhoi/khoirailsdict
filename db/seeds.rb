@@ -14,7 +14,7 @@ User.create!(name:  "KOH",
                password_confirmation: password)
 end
 
-15.times do |n|
+100.times do |n|
   title = Faker::Name.title
   description = Faker::Lorem.paragraphs
   tag_list = Faker::Lorem.word

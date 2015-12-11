@@ -1,24 +1,26 @@
 <% provide(:title, "Log in") %>
-<div class="col-md-6 col-md-offset-2"><h1>Log in</h1></div>
+<div class = "container">
+  <div class="col-md-6 col-md-offset-2"><h1>Log in</h1></div>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= form_for(:session, url: login_path) do |f| %>
 
-      
-      <%= f.email_field :email, class: 'form-control', placeholder: "..Email.." %><br>
+        
+        <%= f.email_field :email, class: 'form-control', placeholder: "..Email..",autofocus: true %><br>
 
-      
-      <%= f.password_field :password, class: 'form-control',placeholder: "..Password.." %><br>
+        
+        <%= f.password_field :password, class: 'form-control',placeholder: "..Password.." %><br>
 
-      <%= f.label :remember_me, class: "checkbox inline" do %>
-        <%= f.check_box :remember_me %><br>
-        <p>Remember me on this computer</p>
-      <% end %>
-      
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %> <br>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %><br>
+          <p>Remember me on this computer</p>
+        <% end %>
+        
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+      <% end %> <br>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    </div>
   </div>
 </div>

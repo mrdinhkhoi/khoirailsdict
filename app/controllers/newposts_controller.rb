@@ -54,7 +54,7 @@ class NewpostsController < ApplicationController
            end
         end
       else
-        redirect_to root_path, alert: 'Access Denied'
+        redirect_to root_path
       end
     end
   end
@@ -75,7 +75,7 @@ class NewpostsController < ApplicationController
           end
         end
       else
-        redirect_to root_path, alert: 'Access Denied'
+        redirect_to root_path
       end
     end
   end
@@ -91,9 +91,10 @@ class NewpostsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      redirect_to root_path, alert: 'Access Denied'
+      redirect_to root_path
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

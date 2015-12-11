@@ -15,9 +15,9 @@
     <div class="col-md-4 col-md-offset-4">
       <br><p> Language : <a href="#">English </a>   <a href="#"> Tieng Viet</a> </p>
     </div>
-    <!--Finding most or least used tags -->
-    <div>
-      
+    <!--most use tags -->
+    <div class="tags col-md-6 col-md-offset-3"> Tags :
+      <%= raw ActsAsTaggableOn::Tag.most_used(30).map { |t| link_to t, tag_path(t.name), {:style=>"color:#DD4814 !important;"}}.join(', ') %>
     </div>
   </div>
 </body>
