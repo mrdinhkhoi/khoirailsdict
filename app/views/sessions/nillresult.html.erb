@@ -2,13 +2,14 @@
   <div class= "container">
       <h2 class="text-center">Không có bài viết phù hợp, vui lòng tìm với từ khóa khác</h2> <br>
     <%= form_tag(newposts_path, :method => "get", id: "search-form") do %>
-      <div class="col-md-6 col-md-offset-3">
+      <div class="input-group col-md-6 col-md-offset-3">
         <%= text_field_tag :search, params[:search],class: "form-control input-lg", 
-                            placeholder: "Tìm theo tiêu đề" %><br>
-      </div>
-
-      <div class="col-md-4 col-md-offset-4">
-        <%= submit_tag "Search", class: "btn btn-primary btn-block", :name => nil %>
+                            placeholder: "Tìm theo tiêu đề" %>
+        <div class="input-group-addon">
+          <button type="submit" class="btn-link">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     <% end %>
     <div class="col-md-4 col-md-offset-4">
