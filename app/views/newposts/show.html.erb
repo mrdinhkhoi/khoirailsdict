@@ -3,7 +3,7 @@
     <div class = "col-md-10 col-md-offset-1">
       <div class = "post_info">
         <span><%= @newpost.created_at %></span>&nbsp;&nbsp;
-        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t),{:style=>"color:#DD4814 !important;"} }.join(', ') %></strong>
+        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></strong>
         </span>&nbsp;
         <span>
           Views: <strong><%= @newpost.count %></strong>

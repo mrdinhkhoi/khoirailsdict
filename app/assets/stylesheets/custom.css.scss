@@ -64,11 +64,63 @@ body {
   padding-top: 30%;
 }
 
+/*bootstrap customs*/
 
+.form-control:focus {
+  border-color: #f29473;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
 
+.btn-link {
+  color: #f29473;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
 
+a:hover, a:focus {
+  color: #2a6496;
+  text-decoration: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  line-height: 1.428571429;
+  text-decoration: none;
+  color: #e65c00;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #f2b373;
+  border-color: #f2b373;
+  cursor: default;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: #ee7044;
+  border-color: #ee7044;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+  color: #fff;
+  background-color: #DD4814;
+  border-color: #DD4814;
+}
 
 /* typography */
+
+
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -107,10 +159,6 @@ dt {
   font-family: Ubuntu, sans-serif; 
 }
 
-.css1 { font-size: 1.0em; }
-.css2 { font-size: 1.2em; }
-.css3 { font-size: 1.4em; }
-.css4 { font-size: 1.6em; }
 
 
 /* forms */
@@ -156,12 +204,6 @@ footer {
   padding-right: 5em;
   border-top: 1px solid $gray-medium-light;
   color: #0d0d0d;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
   small {
     float: left;
   }

@@ -28,14 +28,14 @@
             <dt>
               <h2>
                 <strong>
-                  <%= link_to newpost.title, newpost, {:style=>"color:#DD4814 !important;"} %>
+                  <%= link_to newpost.title, newpost %>
                 </strong>
               </h2>
             </dt>
             <dd><%= truncate(strip_tags(newpost.description),
                    :length => 120) %></dd>
             <!--<dt> <span>tags</span> <%= newpost.keyword %></dt>-->
-            <dt>Tags: <%= raw newpost.tag_list.map { |t| link_to t, tag_path(t), {:style=>"color:#DD4814 !important;"} }.join(', ') %></dt>
+            <dt>Tags: <%= raw newpost.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></dt>
             <dt> <span>Views</span> <%= newpost.count %></dt>
           </dl>
         </div>

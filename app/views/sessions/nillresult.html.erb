@@ -17,7 +17,7 @@
     </div>
     <!--most use tags -->
     <div class="tags col-md-6 col-md-offset-3"> Tags :
-      <%= raw ActsAsTaggableOn::Tag.most_used(30).map { |t| link_to t, tag_path(t.name), {:style=>"color:#DD4814 !important;"}}.join(', ') %>
+      <%= raw ActsAsTaggableOn::Tag.most_used(30).map { |t| link_to t, tag_path(t.name)}.join(', ') %>
     </div>
   </div>
 </body>
