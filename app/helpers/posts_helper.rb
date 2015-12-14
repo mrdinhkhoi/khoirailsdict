@@ -1,3 +1,3 @@
-module NewpostsHelper
+module PostsHelper
 include ActsAsTaggableOn::TagsHelper
 end

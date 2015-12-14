@@ -2,31 +2,35 @@
   <div class = "container">
     <div class = "col-md-10 col-md-offset-1">
       <div class = "post_info">
-        <span><%= @newpost.created_at %></span>&nbsp;&nbsp;
-        <span>Tags: <strong><%= raw @newpost.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></strong>
+        <span><%= @post.created_at %></span>&nbsp;&nbsp;
+        <span>Tags: <strong><%= raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></strong>
         </span>&nbsp;
         <span>
-          Views: <strong><%= @newpost.count %></strong>
+          Views: <strong><%= @post.count %></strong>&nbsp;&nbsp;
         </span>
         <span class = "">
           <% if logged_in? %>
             <% if current_user.admin? %>
-              <%= link_to raw( "<span class = 'glyphicon glyphicon-edit'> Edit</span>") , edit_newpost_path(@newpost), class: "btn btn-link" %> 
+              <%= link_to raw( "<span class = 'glyphicon glyphicon-edit'> Edit</span>") , edit_post_path(@post), class: "btn btn-link" %> 
+              <%= link_to raw( "<span class = 'glyphicon glyphicon-trash'> Delete </span>") , @post ,
+                  class: "btn btn-link",
+                  :confirm => 'Are you sure?' ,
+                  :method => :delete %>
             <% end %>
           <% end %>
         </span>
       </div>
       <div class = 'title'>
-        <%= @newpost.title %>
+        <%= @post.title %>
       </div>
       <div class="description">
-        <%=raw @newpost.description%>
+        <%=raw @post.description%>
       </div><br>
       <!--FB comment -->
       <div class='comment'>
         BÌNH LUẬN
       </div>
-      <div id="fb-root"><div class="fb-comments" data-href="<%= @newpost_path %>" data-width="100%" data-num-posts="2"></div></div>
+      <div id="fb-root"><div class="fb-comments" data-href="<%= @post_path %>" data-width="100%" data-num-posts="2"></div></div>
     </div>
   </div>
   

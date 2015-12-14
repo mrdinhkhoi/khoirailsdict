@@ -1,4 +1,4 @@
-class Newpost < ActiveRecord::Base
+class Post < ActiveRecord::Base
   belongs_to :user
   validates :title, :description, :presence => true
   validates :title, :uniqueness => true

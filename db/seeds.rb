@@ -18,7 +18,7 @@ end
   title = Faker::Name.title
   description = Faker::Lorem.paragraphs
   tag_list = Faker::Lorem.word
-  Newpost.create!(title: title,
+  Post.create!(title: title,
                   description: description,
                   tag_list:tag_list)
 end

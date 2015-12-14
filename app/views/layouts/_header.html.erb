@@ -35,7 +35,7 @@
         <li><%= link_to "Log in", login_path, {:style=>"color:#fff !important;"} %> </li>
       <% end %>
       <!-- <li id="smallsearch">
-       <%= form_tag(newposts_path, :method => "get", id: "search-form") do %>
+       <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
           <div class="input-group" >
             <%= text_field_tag :search, params[:search],class: "form-control input-sm", 
                                 placeholder:"" %>

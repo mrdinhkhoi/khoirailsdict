@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   delete  'logout'  => 'sessions#destroy'
   get     'nill' => 'sessions#nillresult'
   get     'home'   => 'static_pages#search'
-  get     'newp' => 'newposts#new'
-  get     'tags/:tag', to: 'newposts#index', as: :tag
+  get     'newp' => 'posts#new'
+  get     'tags/:tag', to: 'posts#index', as: :tag
   resources :users
-  resources :newposts
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
