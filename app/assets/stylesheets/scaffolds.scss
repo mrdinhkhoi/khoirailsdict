@@ -19,10 +19,15 @@ pre {
 }
 
 a {
-  color: #e65c00;
-  &:visited {
+  color: #ff751a;
+/*  &:visited {
     color: #ff944d;
-  }
+  }*/
+}
+
+a:hover, a:focus {
+  color: #b34700;
+  text-decoration: none;
 }
 
 div {

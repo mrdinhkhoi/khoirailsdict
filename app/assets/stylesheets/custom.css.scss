@@ -80,10 +80,10 @@ body {
   border-radius: 0;
 }
 
-a:hover, a:focus {
+/*a:hover, a:focus {
   color: #2a6496;
   text-decoration: none;
-}
+}*/
 .pagination > li > a,
 .pagination > li > span {
   position: relative;
@@ -202,7 +202,7 @@ footer {
   padding-top: 1em;
   padding-left: 5em;
   padding-right: 5em;
-  border-top: 1px solid $gray-medium-light;
+  /*border-top: 1px solid $gray-medium-light;*/
   color: #0d0d0d;
   small {
     float: left;
