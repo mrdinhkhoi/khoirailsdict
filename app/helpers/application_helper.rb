@@ -10,5 +10,13 @@ def link_to_add_fields(name, f, type)
   link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
 end
 
+def full_title(page_title = '')
+    base_title = "Rails Dict"
+    if page_title.empty?
+      base_title
+    else
+      page_title + " - " + base_title
+    end
+  end
 
 end

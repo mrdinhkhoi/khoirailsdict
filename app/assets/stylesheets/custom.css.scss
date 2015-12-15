@@ -22,6 +22,11 @@ $gray-medium-light: #eaeaea;
 .dropdown-menu {
   background-color: #DD4814;
 }
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #a4350f;
+}
 
 body {
  background: linear-gradient(#e6e6e6,#cccccc);
@@ -64,7 +69,12 @@ body {
   padding-top: 30%;
 }
 
-/*bootstrap customs*/
+/* ------------------------bootstrap customs-----------------------------------*/
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #a4350f;
+  color: #555;
+}
 
 .form-control:focus {
   border-color: #f29473;
@@ -117,6 +127,7 @@ body {
   background-color: #DD4814;
   border-color: #DD4814;
 }
+
 
 /* typography */
 
