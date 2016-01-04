@@ -18,9 +18,11 @@ end
   title = Faker::Name.title
   description = Faker::Lorem.paragraphs
   tag_list = Faker::Lorem.word
+  image_url = Faker::Avatar.image
   Post.create!(title: title,
-                  description: description,
-                  tag_list:tag_list)
+               description: description,
+               image_url: image_url,
+               tag_list:tag_list)
 end
 
 

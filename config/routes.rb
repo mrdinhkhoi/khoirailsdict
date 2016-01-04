@@ -3,13 +3,13 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get     'static_pages/search'
+  get     'search' => 'static_pages#search'
   get     'signup'  => 'users#new'
   get     'login'   => 'sessions#new'
   post    'login'   => 'sessions#create'
   delete  'logout'  => 'sessions#destroy'
   get     'nill' => 'sessions#nillresult'
-  get     'home'   => 'static_pages#search'
+  get     'homepage'   => 'sessions#homepage'
   get     'newp' => 'posts#new'
   get     'tags/:tag', to: 'posts#index', as: :tag
   resources :users
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'static_pages#search'
+   root 'sessions#homepage'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

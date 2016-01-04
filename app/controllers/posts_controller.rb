@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  helper_method :getallpost
   # GET /posts
   # GET /posts.json
   def index
@@ -14,6 +15,7 @@ class PostsController < ApplicationController
     @posts = Post.tagged_with(params[:tag]).paginate(page: params[:page], :per_page => 15)
   end
   end
+
   # GET /posts/1.json
   def show
     #counting every showtime
