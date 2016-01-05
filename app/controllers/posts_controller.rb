@@ -89,7 +89,7 @@ class PostsController < ApplicationController
     if current_user.admin?
       @post.destroy
       respond_to do |format|
-        format.html { redirect_to posts_url, alert: 'Post was successfully destroyed.' }
+        format.html { redirect_to root_path, alert: 'Post was successfully destroyed.' }
         format.json { head :no_content }
       end
     else

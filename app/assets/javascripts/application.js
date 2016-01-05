@@ -11,6 +11,7 @@
 // about supported directives.
 //= require jquery
 //= require jquery_ujs
+//= require owl.carousel
 //= require ckeditor-jquery
 //= require bootstrap
 //= require_tree .

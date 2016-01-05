@@ -1,3 +1,28 @@
+<% provide(:title, "Trang chủ") %>
+<!-- slide -->
+  <div class="col-md-6 col-md-offset-3">
+  <% @posts = Post.order("created_at desc").limit(5) %>
+  <div class="owl-carousel">
+    <% @posts.each do |post| %>
+      <div>
+        <%= image_tag(post.image_url, :class => 'list2_image' ) %>
+        <p class="carouseltext">
+          <%= link_to post.title, post %>
+        </p>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript">
+  $(".owl-carousel").owlCarousel({
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          autoPlay: 6000,
+          singleItem:true
+  });
+</script>
+<!-- list post -->
 <% @posts = Post.paginate(:page => params[:page], :per_page => 10).order('created_at DESC') %>
   <table>
   <% @posts.each do |post| %>
@@ -22,8 +47,8 @@
             <dt> <span>Views</span> <%= post.count %></dt>
           </dl>
         </div>
-        <!--
-        <div class="col-md-4">
+
+<!--         <div class="col-md-4">
           <% if logged_in? %>
             <% if current_user.admin? %>
               <%= link_to 'Destroy' , post, class: "btn btn-danger",
@@ -31,8 +56,8 @@
                   :method => :delete %>
             <% end %>
           <% end %>
-        </div>
-      -->
+        </div> -->
+
       </div>  
     </tr>
   <% end %>
