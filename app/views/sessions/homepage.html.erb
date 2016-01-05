@@ -1,11 +1,12 @@
 <% provide(:title, "Trang chủ") %>
+<div class="container">
 <!-- slide -->
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
   <% @posts = Post.order("created_at desc").limit(5) %>
   <div class="owl-carousel">
     <% @posts.each do |post| %>
       <div>
-        <%= image_tag(post.image_url, :class => 'list2_image' ) %>
+        <%= link_to image_tag(post.image_url, :class => 'list2_image' ), post %>
         <p class="carouseltext">
           <%= link_to post.title, post %>
         </p>
@@ -65,3 +66,4 @@
   <div class = "row">
     <div class="col-md-5 col-md-offset-3"><%= will_paginate @posts %></div>
   </div>
+</div>
