@@ -14,3 +14,6 @@ CKEDITOR.editorConfig = (config) ->
     { name: 'insert', items: ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak'] }
   ];
   config.toolbar = 'Menu';
+  config.font_defaultLabel = 'Arial';
+  config.fontSize_defaultLabel = '14px';
+

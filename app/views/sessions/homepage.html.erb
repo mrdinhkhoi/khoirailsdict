@@ -1,20 +1,46 @@
 <% provide(:title, "Trang chủ") %>
-<div class="container">
-<!-- slide -->
-  <div class="col-md-8 col-md-offset-2">
-  <% @posts = Post.order("created_at desc").limit(5) %>
-  <div class="owl-carousel">
-    <% @posts.each do |post| %>
-      <div>
-        <%= link_to image_tag(post.image_url, :class => 'list2_image' ), post %>
-        <p class="carouseltext">
-          <%= link_to post.title, post %>
-        </p>
-      </div>
+<%= render 'sessions/slide' %>
 
+<!-- list of post -->
+
+<div id="postlist">
+<% @posts = Post.paginate(:page => params[:page], :per_page => 10).order('created_at DESC') %>
+<div class="">
+  <table>
+    <% @posts.each do |post| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <div class = "row">
+          <div class="col-md-3 col-md-offset-1" >
+            <%= image_tag(post.image_url, :class => 'list_image center-block' ) %>
+          </div>
+          <div class="col-md-7 " id="post-each">
+            <dl>
+              <dt>
+                <h2>
+                  <strong>
+                    <%= link_to post.title, post %>
+                  </strong>
+                </h2>
+              </dt>
+              <dd><%= truncate(strip_tags(post.description),
+                     :length => 250) %></dd>
+              <!--<dt> <span>tags</span> <%= post.keyword %></dt>-->
+              <dt>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></dt>
+              <dt><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> <%= post.count %></dt>
+            </dl>
+          </div>
+        </div>  
+      </tr>
     <% end %>
+  </table><br />
   </div>
+  <div class = "row">
+    <div class="col-md-7 col-md-offset-3"><%= will_paginate @posts %></div>
+  </div>
+
 </div>
+<!-- end-list of post-->
+
 <script type="text/javascript">
   $(".owl-carousel").owlCarousel({
           slideSpeed : 300,
@@ -23,47 +49,3 @@
           singleItem:true
   });
 </script>
-<!-- list post -->
-<% @posts = Post.paginate(:page => params[:page], :per_page => 10).order('created_at DESC') %>
-  <table>
-  <% @posts.each do |post| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-      <div class = "row">
-        <div class="col-md-3 col-md-offset-1" >
-          <%= image_tag(post.image_url, :class => 'list_image' ) %>
-        </div>
-        <div class="col-md-6 ">
-          <dl>
-            <dt>
-              <h2>
-                <strong>
-                  <%= link_to post.title, post %>
-                </strong>
-              </h2>
-            </dt>
-            <dd><%= truncate(strip_tags(post.description),
-                   :length => 300) %></dd>
-            <!--<dt> <span>tags</span> <%= post.keyword %></dt>-->
-            <dt>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></dt>
-            <dt> <span>Views</span> <%= post.count %></dt>
-          </dl>
-        </div>
-
-<!--         <div class="col-md-4">
-          <% if logged_in? %>
-            <% if current_user.admin? %>
-              <%= link_to 'Destroy' , post, class: "btn btn-danger",
-                  :confirm => 'Are you sure?' ,
-                  :method => :delete %>
-            <% end %>
-          <% end %>
-        </div> -->
-
-      </div>  
-    </tr>
-  <% end %>
-  </table><br />
-  <div class = "row">
-    <div class="col-md-5 col-md-offset-3"><%= will_paginate @posts %></div>
-  </div>
-</div>

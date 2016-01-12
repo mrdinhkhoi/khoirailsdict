@@ -1,6 +1,6 @@
 <% provide(:title, @post.title) %>
 <body>
-  <div class = "container">
+  <div class = "container" id="show">
     <div class = "col-md-10 col-md-offset-1">
       <div class = "post_info">
         <span><%= @post.created_at %></span>&nbsp;&nbsp;
@@ -25,7 +25,7 @@
         <%= @post.title %>
       </div>
       <div class="description">
-        <%=raw @post.description%>
+        <%= @post.description.html_safe %>
       </div><br>
       <!--FB comment -->
       <div class='comment'>

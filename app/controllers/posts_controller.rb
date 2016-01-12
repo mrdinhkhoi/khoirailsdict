@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
    if params[:search]
-    @posts = Post.search(params[:search]).paginate(page: params[:page], :per_page => 15)
+    @posts = Post.search(params[:search]).paginate(page: params[:page], :per_page => 15).order('created_at DESC')
     unless @posts.present?
       redirect_to nill_url
     end

@@ -2,7 +2,6 @@
 <p id="notice"><%= notice %></p>
 <head>
 </head>
-<body>
   <div class = "container">
     <div class="row"> 
       <div class="col-md-6 col-md-offset-3">
@@ -19,17 +18,17 @@
         <% end %>
       </div>
             <!--most use tags -->
-      <div class="tags col-md-6 col-md-offset-3" id ="50tags"> Tags :
-        <%= raw ActsAsTaggableOn::Tag.most_used(50).map { |t| link_to t, tag_path(t.name)}.join(', ') %>
+      <div class="tags col-md-6 col-md-offset-3" id ="the50tags"> <strong style="color: #fff;">Tags :</strong>
+        <%= raw ActsAsTaggableOn::Tag.most_used(50).map { |t| link_to t, tag_path(t.name),{:style=>"color:#fff;"}}.join(', ') %>
       </div>
     </div>
     <% if @posts.present? %>
       <script type="text/javascript">
-        $('#50tags').remove();
+        $('#the50tags').remove();
       </script>
       <%= render 'posts/output' %>
     <% end %>
   </div>
-</body>
+
 
 

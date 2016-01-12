@@ -2,7 +2,7 @@ body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 1.5em;
   line-height: 18px;
 }
 
@@ -19,14 +19,15 @@ pre {
 }
 
 a {
-  color: #ff751a;
+font-family: sans-serif;
+  color: #000;
 /*  &:visited {
-    color: #ff944d;
+    color: #000;
   }*/
 }
 
 a:hover, a:focus {
-  color: #b34700;
+  color: #009FDA;
   text-decoration: none;
 }
 
